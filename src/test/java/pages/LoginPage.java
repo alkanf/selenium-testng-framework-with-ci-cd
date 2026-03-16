@@ -14,7 +14,7 @@ public LoginPage(WebDriver driver) {
 private final By txt_Username = By.xpath("//input[@id='user-name']");
 private final By txt_Password = By.xpath("//input[@id='password']");
 private final By btn_Login = By.xpath("//input[@id='login-button']");
-private final By txt_products = By.xpath("//span[@class='title']");
+private final By logo_Login = By.xpath("//div[@class='login_logo']");
 
 //3) Methods actions
 public void typeUsername(String username) {
@@ -27,8 +27,9 @@ public void clickLogin() {
 	click(btn_Login);
 }
 public boolean actualResult() {
-	return isDisplayed(txt_products);
+	return waitVisibility(logo_Login).isDisplayed(); //waitVisibility method from basepage as it is executing fast and test would fail.
 }
+
 	
 	
 	

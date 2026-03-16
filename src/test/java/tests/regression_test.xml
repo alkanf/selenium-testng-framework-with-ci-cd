@@ -9,6 +9,8 @@
     <test name="LoginTests">
         <classes>
             <class name="tests.TC001_Login"/>
+            <class name="tests.TC002_Logout"/>
+
             </classes>
     </test>
 

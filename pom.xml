@@ -9,8 +9,8 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>25</maven.compiler.source>
-        <maven.compiler.target>25</maven.compiler.target>
+        <maven.compiler.source>24</maven.compiler.source>
+        <maven.compiler.target>24</maven.compiler.target>
     </properties>
 
     <dependencies>
@@ -37,20 +37,20 @@
         </dependency>
 
         <!-- ExtentReports (opsiyonel, tavsiye edilir) -->
-        <dependency>
+         <dependency>
             <groupId>com.aventstack</groupId>
             <artifactId>extentreports</artifactId>
-            <version>5.0.9</version>
-        </dependency>
+            <version>5.1.1</version>
+         </dependency>
 
-        <!-- Apache Commons IO (opsiyonel, screenshot helper için) -->
+		<!-- Apache Commons IO (opsiyonel, screenshot helper için) -->
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>2.12.0</version>
         </dependency>
 
-        <!-- Log4j (opsiyonel, logging için) -->
+		<!-- Log4j (opsiyonel, logging için) -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>

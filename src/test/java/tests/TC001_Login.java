@@ -4,9 +4,10 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
-import utilities.Log;
+import pages.InventoryPage;
 import pages.LoginPage;
 import utilities.ConfigReader;
+import utilities.Log;
 
 public class TC001_Login extends BaseTest {
 	
@@ -26,8 +27,10 @@ public void verifySuccessfullLogin() {
 	lp.clickLogin();
 	
 	Log.info("Validating expected products page result");
-	boolean isProductsPageDisplayed = lp.actualResult();
+	InventoryPage ip = new InventoryPage(driver);
+	boolean isProductsPageDisplayed = ip.actualResult();
 	Assert.assertTrue(isProductsPageDisplayed);
+	Log.info("Expected products page result is validated, test is sucessfull");
 	}
 	catch(Exception e) {
 		Log.error("Test failed due to unexpected behaviour: " + e.getMessage());
