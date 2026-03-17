@@ -17,7 +17,6 @@ public class TC002_Logout extends BaseTest{
 			LoginPage lp = new LoginPage(driver); 
 			
 			Log.info("Entering Valid Test Data");
-
 			lp.typeUsername(ConfigReader.getProperty("valid_username"));
 			lp.typePassword(ConfigReader.getProperty("valid_password"));
 			lp.clickLogin();
@@ -25,8 +24,9 @@ public class TC002_Logout extends BaseTest{
 			Log.info("Validating logout");
 			InventoryPage ip = new InventoryPage(driver);
 			ip.clickHamburger(); ip.clickLogout();
-			boolean isLoginPageDisplayed = ip.actualResult();
+			boolean isLoginPageDisplayed = lp.actualResult();
 			Assert.assertTrue(isLoginPageDisplayed);
+			
 			Log.info(" Expected logout page result is validated, test is sucessfull");
 			}
 			catch(Exception e) {

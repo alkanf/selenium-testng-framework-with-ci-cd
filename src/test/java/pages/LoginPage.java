@@ -15,7 +15,7 @@ private final By txt_Username = By.xpath("//input[@id='user-name']");
 private final By txt_Password = By.xpath("//input[@id='password']");
 private final By btn_Login = By.xpath("//input[@id='login-button']");
 private final By logo_Login = By.xpath("//div[@class='login_logo']");
-
+private final By txt_InvalidLogin = By.xpath("//h3[contains(text(),'Epic sadface: Username and password do not match a')]");
 //3) Methods actions
 public void typeUsername(String username) {
 sendKeys(txt_Username, username);
@@ -29,7 +29,9 @@ public void clickLogin() {
 public boolean actualResult() {
 	return waitVisibility(logo_Login).isDisplayed(); //waitVisibility method from basepage as it is executing fast and test would fail.
 }
-
+public boolean invalidLogin() {
+	return isDisplayed(txt_InvalidLogin);
+}
 	
 	
 	

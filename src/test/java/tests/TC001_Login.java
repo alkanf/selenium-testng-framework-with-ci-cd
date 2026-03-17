@@ -21,7 +21,6 @@ public void verifySuccessfullLogin() {
 	LoginPage lp = new LoginPage(driver); 
 	
 	Log.info("Entering Valid Test Data");
-
 	lp.typeUsername(ConfigReader.getProperty("valid_username"));
 	lp.typePassword(ConfigReader.getProperty("valid_password"));
 	lp.clickLogin();
@@ -30,6 +29,7 @@ public void verifySuccessfullLogin() {
 	InventoryPage ip = new InventoryPage(driver);
 	boolean isProductsPageDisplayed = ip.actualResult();
 	Assert.assertTrue(isProductsPageDisplayed);
+	
 	Log.info("Expected products page result is validated, test is sucessfull");
 	}
 	catch(Exception e) {

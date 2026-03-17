@@ -10,6 +10,9 @@
         <classes>
             <class name="tests.TC001_Login"/>
             <class name="tests.TC002_Logout"/>
+            <class name="tests.TC003_InvalidLogin"/>
+            <class name="tests.TC004_ProductSort"/>
+
 
             </classes>
     </test>
