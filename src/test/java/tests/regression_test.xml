@@ -12,6 +12,10 @@
             <class name="tests.TC002_Logout"/>
             <class name="tests.TC003_InvalidLogin"/>
             <class name="tests.TC004_ProductSort"/>
+            <class name="tests.TC005_AddToCart"/>
+            <class name="tests.TC006_RemoveFromCart"/>
+
+
 
 
             </classes>
