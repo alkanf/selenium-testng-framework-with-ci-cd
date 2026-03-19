@@ -2,6 +2,7 @@ package drivers;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -15,7 +16,11 @@ public class DriverFactory {
 	public static void initDriver(String browser) {
 		if (browser.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
-			driver.set(new ChromeDriver());
+		    // For pop up and extensions
+		    ChromeOptions options = new ChromeOptions();
+		    options.addArguments("--disable-notifications");
+		    options.addArguments("--disable-save-password-bubble");
+		    driver.set(new ChromeDriver(options));
 		} else if (browser.equalsIgnoreCase("edge")) {
 			WebDriverManager.edgedriver().setup();
 			driver.set(new EdgeDriver());

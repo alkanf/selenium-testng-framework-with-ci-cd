@@ -83,9 +83,8 @@ public class TC006_RemoveFromCart extends BaseTest {
 		
 		Log.info("Validating Remove in Cart Page and clicking it"); //Using soft assert as there is two assertions
 		CartPage ce = new CartPage(driver);
-		ce.clickCartPage();
+		ip.clickCartPage();
 		ce.clickRemoveCart();
-		
 		
 		
 		

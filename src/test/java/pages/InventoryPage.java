@@ -24,7 +24,8 @@ public class InventoryPage extends BasePage {
 	private final By btn_AddToCart = By.xpath("(//button[text()='Add to cart'])[1]"); //index path as product can change
 	private final By icon_AddToCartNumber = By.xpath("//span[@class='shopping_cart_badge']");
 	private final By btn_RemoveCart = By.xpath("(//button[text()='Remove'])[1]");
-	
+	private final By btn_CartPage = By.xpath("//*[@id=\"shopping_cart_container\"]/a/span");
+
 	//3) Methods actions
 	public boolean actualResult() {
 		return isDisplayed(txt_Products);
@@ -74,6 +75,9 @@ public class InventoryPage extends BasePage {
 	public void ClickRemoveCart() {
 	click(btn_RemoveCart);
 	}
+	public void clickCartPage() {
+		waitVisibility(btn_CartPage).click();
+		}
 	
 	}
 	
