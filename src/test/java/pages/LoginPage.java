@@ -27,22 +27,16 @@ public void clickLogin() {
 	click(btn_Login);
 }
 public boolean actualResult() {
-	return waitVisibility(logo_Login).isDisplayed(); //waitVisibility method from basepage as it is executing fast and test would fail.
+	return isDisplayed(logo_Login); //waitVisibility method from basepage as it is executing fast and test would fail.
 }
 public boolean invalidLogin() {
 	return isDisplayed(txt_InvalidLogin);
 }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+//Wrapper method
+public void login(String user, String pass) {
+    typeUsername(user);
+    typePassword(pass);
+    clickLogin();
+}
 }

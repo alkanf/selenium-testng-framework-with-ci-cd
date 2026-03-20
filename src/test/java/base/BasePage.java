@@ -1,6 +1,7 @@
 package base;
 
 import java.time.Duration;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -18,6 +19,7 @@ protected WebDriverWait wait;
 	}
 	
 //These are valid also for driver.findelement
+//POM Methods, Click, SendKeys, isDisplayed, waitVisibility
 protected void click(By locator) {
 	wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).click();
 }
@@ -36,6 +38,25 @@ protected boolean isDisplayed(By locator) {
 public WebElement waitVisibility(By locator) {
     return new WebDriverWait(driver, Duration.ofSeconds(10))
             .until(ExpectedConditions.visibilityOfElementLocated(locator));
+}
+protected String getText(By locator) {
+    return wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).getText();
+}
+
+//Switch tab methods
+public void switchToNewWindow() {
+    String mainWindow = driver.getWindowHandle();
+    Set<String> allWindows = driver.getWindowHandles();
+
+    for (String window : allWindows) {
+        if (!window.equals(mainWindow)) {
+            driver.switchTo().window(window);
+            break;
+        }
+    }
+}
+public void switchToMainWindow(String mainWindowHandle) {
+    driver.switchTo().window(mainWindowHandle);
 }
 	
 }

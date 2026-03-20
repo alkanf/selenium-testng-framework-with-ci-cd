@@ -16,7 +16,7 @@ private final By btn_RemoveCart = By.xpath("//button[@id='remove-sauce-labs-back
 private final By btn_CheckoutPage = By.xpath("//button[@id='checkout']");
 //3) Methods / Actions
 public String verifyCartQuantity() {
-return waitVisibility(txt_CartQuantity).getText();
+return getText(txt_CartQuantity);
 }
 
 public void clickRemoveCart() {

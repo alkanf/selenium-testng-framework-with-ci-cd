@@ -21,9 +21,7 @@ public class TC006_RemoveFromCart extends BaseTest {
 		LoginPage lp = new LoginPage(driver); 
 		
 		Log.info("Entering Valid Test Data");
-		lp.typeUsername(ConfigReader.getProperty("valid_username"));
-		lp.typePassword(ConfigReader.getProperty("valid_password"));
-		lp.clickLogin();
+		lp.login(ConfigReader.getProperty("valid_username"), ConfigReader.getProperty("valid_password"));
 		
 		Log.info("Clicking Add To Cart");
 		SoftAssert sa = new SoftAssert(); 
@@ -51,7 +49,7 @@ public class TC006_RemoveFromCart extends BaseTest {
 		}
 		catch(Exception e) {
 			Log.error("Test failed due to unexpected behaviour: " + e.getMessage());
-			Assert.assertTrue(false);
+			Assert.fail(e.getMessage());
 
 		}
 	}
@@ -82,8 +80,8 @@ public class TC006_RemoveFromCart extends BaseTest {
 		sa.assertEquals(cartNumberVerify, "1");
 		
 		Log.info("Validating Remove in Cart Page and clicking it"); //Using soft assert as there is two assertions
-		CartPage ce = new CartPage(driver);
 		ip.clickCartPage();
+		CartPage ce = new CartPage(driver);
 		ce.clickRemoveCart();
 		
 		
@@ -96,7 +94,7 @@ public class TC006_RemoveFromCart extends BaseTest {
 		}
 		catch(Exception e) {
 			Log.error("Test failed due to unexpected behaviour: " + e.getMessage());
-			Assert.assertTrue(false);
+			Assert.fail(e.getMessage());
 
 		}
 	

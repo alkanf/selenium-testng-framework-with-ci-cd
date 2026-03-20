@@ -12,7 +12,7 @@ import utilities.Log;
 
 public class TC005_AddToCart extends BaseTest {
 	@Test
-	public void verifySuccessfullLogin() {
+	public void verifyAddtoCart() {
 		Log.info("TC005_AddToCart starts....");
 		try {
 			
@@ -20,9 +20,7 @@ public class TC005_AddToCart extends BaseTest {
 		LoginPage lp = new LoginPage(driver); 
 		
 		Log.info("Entering Valid Test Data");
-		lp.typeUsername(ConfigReader.getProperty("valid_username"));
-		lp.typePassword(ConfigReader.getProperty("valid_password"));
-		lp.clickLogin();
+		lp.login(ConfigReader.getProperty("valid_username"), ConfigReader.getProperty("valid_password"));
 		
 		Log.info("Clicking Add To Cart");
 		SoftAssert sa = new SoftAssert(); 
@@ -43,7 +41,7 @@ public class TC005_AddToCart extends BaseTest {
 		}
 		catch(Exception e) {
 			Log.error("Test failed due to unexpected behaviour: " + e.getMessage());
-			Assert.assertTrue(false);
+			Assert.fail(e.getMessage());
 
 		}
 	}

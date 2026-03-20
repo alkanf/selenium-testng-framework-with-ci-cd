@@ -17,9 +17,7 @@ public class TC002_Logout extends BaseTest{
 			LoginPage lp = new LoginPage(driver); 
 			
 			Log.info("Entering Valid Test Data");
-			lp.typeUsername(ConfigReader.getProperty("valid_username"));
-			lp.typePassword(ConfigReader.getProperty("valid_password"));
-			lp.clickLogin();
+			lp.login(ConfigReader.getProperty("valid_username"), ConfigReader.getProperty("valid_password"));
 			
 			Log.info("Validating logout");
 			InventoryPage ip = new InventoryPage(driver);
@@ -31,7 +29,7 @@ public class TC002_Logout extends BaseTest{
 			}
 			catch(Exception e) {
 				Log.error("Test failed due to unexpected behaviour: " + e.getMessage());
-				Assert.assertTrue(false);
+				Assert.fail(e.getMessage());
 
 		}
 

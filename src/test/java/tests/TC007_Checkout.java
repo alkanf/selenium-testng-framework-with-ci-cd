@@ -14,17 +14,14 @@ import utilities.Log;
 
 public class TC007_Checkout extends BaseTest {
 	@Test
-	public void verifyRemovingProductFromCartInCartPage() {
-		Log.info("TC006_RemoveFromCart starts....");
-		Log.info("TC006_RemoveFromCart in Cart Page starts....");
+	public void verifyCheckoutPage() {
+		Log.info("TC007_Checkout starts....");
 		try {
 			
 		LoginPage lp = new LoginPage(driver); 
 		
 		Log.info("Entering Valid Test Data");
-		lp.typeUsername(ConfigReader.getProperty("valid_username"));
-		lp.typePassword(ConfigReader.getProperty("valid_password"));
-		lp.clickLogin();
+		lp.login(ConfigReader.getProperty("valid_username"), ConfigReader.getProperty("valid_password"));
 		
 		Log.info("Clicking Add To Cart");
 		SoftAssert sa = new SoftAssert(); 
@@ -59,17 +56,17 @@ public class TC007_Checkout extends BaseTest {
 		ca.clickFinish();
 		
 		Log.info("Navigating finish");
-		String verifyCheckout = ca.verifyCheckout();
-		sa.assertTrue(verifyCheckout.equalsIgnoreCase("Thank you for your order!"));
+		boolean verifyCheckout = ca.verifyCheckout();
+		sa.assertTrue(verifyCheckout);
 		
 		sa.assertAll();
 	
 		
-		Log.info("Expected remove from cart in cart page function result is validated, test is sucessfull");
+		Log.info("Expected checkout function result is validated, test is sucessfull");
 		}
 		catch(Exception e) {
 			Log.error("Test failed due to unexpected behaviour: " + e.getMessage());
-			Assert.assertTrue(false);
+			Assert.fail(e.getMessage());
 
 		}
 	

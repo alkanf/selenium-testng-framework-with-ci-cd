@@ -17,12 +17,9 @@ public void verifyInvalidLogin() {
 		
 
 	LoginPage lp = new LoginPage(driver); 
-	
+		
 	Log.info("Entering Invaalid Test Data");
-
-	lp.typeUsername("invalid_username");
-	lp.typePassword("invalid_password");
-	lp.clickLogin();
+	lp.login("invalid_username", "invalid_password");
 	
 	Log.info("Validating expected error result");
 	boolean isErrorDisplayed = lp.invalidLogin();
@@ -31,7 +28,7 @@ public void verifyInvalidLogin() {
 	}
 	catch(Exception e) {
 		Log.error("Test failed due to unexpected behaviour: " + e.getMessage());
-		Assert.assertTrue(false);
+		Assert.fail(e.getMessage());
 
 	}
 }

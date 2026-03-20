@@ -15,9 +15,9 @@
             <class name="tests.TC005_AddToCart"/>
             <class name="tests.TC006_RemoveFromCart"/>
             <class name="tests.TC007_Checkout"/>
-
-
-
+            <class name="tests.TC008_ProductDetail"/>
+            <class name="tests.TC009_SocialMediaLinks"/>
+            <class name="tests.TC010_EndToEnd"/>
 
 
             </classes>

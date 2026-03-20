@@ -33,7 +33,7 @@ private final By txt_CartQuantity = By.xpath("//div[@class='cart_quantity']");
 private final By btn_Finish = By.xpath("//button[@id='finish']");
 //Methods Step 2 Page
 public String verifyCartQuantity() {
-return waitVisibility(txt_CartQuantity).getText();
+return getText(txt_CartQuantity);
 }
 public void clickFinish() {
 click(btn_Finish);
@@ -41,8 +41,8 @@ click(btn_Finish);
 //Locators Step 3 Page
 private final By txt_verifyCheckout = By.xpath("//h2[normalize-space()='Thank you for your order!']");
 //Methods Step 3 Page
-public String verifyCheckout() {
-return waitVisibility(txt_verifyCheckout).getText();
+public boolean verifyCheckout() {
+return isDisplayed(txt_verifyCheckout);
 }
 
 
