@@ -23,7 +23,7 @@ jobs:
         run: mvn test -Dremote=true -DsuiteXmlFile=regression_test.xml
 
       - name: Upload Reports and Logs
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: regression-results
           path: |
@@ -46,7 +46,7 @@ jobs:
         run: mvn test -Dremote=true -DsuiteXmlFile=parallel_test.xml
 
       - name: Upload Reports and Logs
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: parallel-results
           path: |
