@@ -18,7 +18,7 @@ public void verifyInvalidLogin() {
 
 	LoginPage lp = new LoginPage(driver); 
 		
-	Log.info("Entering Invaalid Test Data");
+	Log.info("Entering Invalid Test Data");
 	lp.login("invalid_username", "invalid_password");
 	
 	Log.info("Validating expected error result");

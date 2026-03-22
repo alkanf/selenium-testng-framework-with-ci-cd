@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Regression Suite" parallel="tests" thread-count="2">
+<suite name="Regression Suite" parallel="tests" thread-count="3">
 
     <listeners>
         <listener class-name="utilities.TestListener"/>
@@ -11,18 +11,25 @@
             <class name="tests.TC001_Login"/>
             <class name="tests.TC002_Logout"/>
             <class name="tests.TC003_InvalidLogin"/>
-            <class name="tests.TC004_ProductSort"/>
+            <class name="tests.TC011_DataDrivenLogin"/>
+        </classes>
+    </test>
+
+    <test name="CartTests">
+        <classes>
             <class name="tests.TC005_AddToCart"/>
             <class name="tests.TC006_RemoveFromCart"/>
             <class name="tests.TC007_Checkout"/>
+        </classes>
+    </test>
+
+    <test name="OtherTests">
+        <classes>
+            <class name="tests.TC004_ProductSort"/>
             <class name="tests.TC008_ProductDetail"/>
             <class name="tests.TC009_SocialMediaLinks"/>
             <class name="tests.TC010_EndToEnd"/>
-            <class name="tests.TC011_DataDrivenLogin"/>
-
-
-
-            </classes>
+        </classes>
     </test>
 
 </suite>
