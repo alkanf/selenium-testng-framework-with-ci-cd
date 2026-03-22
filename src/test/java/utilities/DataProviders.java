@@ -15,6 +15,7 @@ return new Object[][] { //two dimensional array as login and password
 };
 }
 
+
 @DataProvider(name = "invalidLoginData")
 public Object[][] getInvalidLoginData() {
     return new Object[][] {
