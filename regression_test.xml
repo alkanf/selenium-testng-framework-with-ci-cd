@@ -20,8 +20,6 @@
             <class name="tests.TC010_EndToEnd"/>
             <class name="tests.TC011_DataDrivenLogin"/>
 
-
-
             </classes>
     </test>
 

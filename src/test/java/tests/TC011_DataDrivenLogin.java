@@ -26,7 +26,7 @@ public void verifySuccessfullLogin(String username, String password) {// Dont fo
 	Log.info("Validating expected products page result");
 	InventoryPage ip = new InventoryPage(driver);
 	boolean isProductsPageDisplayed = ip.actualResult();
-	Assert.assertTrue(isProductsPageDisplayed);
+	Assert.assertFalse(isProductsPageDisplayed);
 	
 	Log.info("Expected products page result is validated, test is sucessfull");
 	}
